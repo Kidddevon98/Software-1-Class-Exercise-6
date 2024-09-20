@@ -1,0 +1,15 @@
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\PetStore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\PetStore.AssemblyInfoInputs.cache
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\PetStore.AssemblyInfo.cs
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\PetStore.csproj.CoreCompileInputs.cache
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\PetStore.sourcelink.json
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\bin\Debug\net6.0\PetStore.exe
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\bin\Debug\net6.0\PetStore.deps.json
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\bin\Debug\net6.0\PetStore.runtimeconfig.json
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\bin\Debug\net6.0\PetStore.dll
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\bin\Debug\net6.0\PetStore.pdb
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\PetStore.dll
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\refint\PetStore.dll
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\PetStore.pdb
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\PetStore.genruntimeconfig.cache
+C:\Users\kiddd\Documents\Software-1-Class-Exercise-6\petstore\petstore\obj\Debug\net6.0\ref\PetStore.dll
