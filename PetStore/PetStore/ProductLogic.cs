@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PetStore
 {
-    internal class ProductLogic : IProductLogic
+    /// <summary>
+    /// Provides logic for handling product-related operations.
+    /// </summary>
+    public class ProductLogic : IProductLogic
     {
         private List<Product> _products;
         private Dictionary<string, DogLeash> _dogLeash;
         private Dictionary<string, CatFood> _catFood;
 
+        /// <summary>
+        /// Initializes the product logic with sample data.
+        /// </summary>
         public ProductLogic()
         {
             _products = new List<Product>
@@ -30,7 +34,7 @@ namespace PetStore
                     Quantity = 6,
                     Price = 25.59m,
                     Name = "Plain 'Ol Cat Food",
-                    Description = "Nothing fancy to find here.  Just the basic stuff your cat needs to live a healthy life",
+                    Description = "Nothing fancy to find here. Just the basic stuff your cat needs to live a healthy life.",
                     WeightPounds = 10,
                     KittenFood = false
                 },
@@ -39,49 +43,69 @@ namespace PetStore
                     Quantity = 48,
                     Price = 12.99m,
                     Name = "Fancy Cat Food",
-                    Description = "Food that isn't only delicious, but made from the finest of all cat food stuff",
+                    Description = "Food that isn't only delicious, but made from the finest ingredients.",
                     KittenFood = false
                 }
             };
+
             _dogLeash = new Dictionary<string, DogLeash>();
             _catFood = new Dictionary<string, CatFood>();
         }
 
+        /// <summary>
+        /// Adds a product to the system.
+        /// </summary>
+        /// <param name="product">The product to add.</param>
         public void AddProduct(Product product)
         {
-            if (product is DogLeash)
+            if (product is DogLeash dogLeash)
             {
-                _dogLeash.Add(product.Name, product as DogLeash);
+                _dogLeash[product.Name] = dogLeash;
             }
-            if (product is CatFood)
+            else if (product is CatFood catFood)
             {
-                _catFood.Add(product.Name, product as CatFood);
+                _catFood[product.Name] = catFood;
             }
+
             _products.Add(product);
         }
 
+        /// <summary>
+        /// Retrieves all products.
+        /// </summary>
+        /// <returns>A list of all products.</returns>
         public List<Product> GetAllProducts()
         {
             return _products;
         }
 
-        public DogLeash GetDogLeashByName(string name)
+        /// <summary>
+        /// Retrieves a dog leash by its name.
+        /// </summary>
+        /// <param name="name">The name of the dog leash.</param>
+        /// <returns>The matching dog leash, or null if not found.</returns>
+        public DogLeash? GetDogLeashByName(string name)
         {
-            try
-            {
-                return _dogLeash[name];
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            if (_dogLeash.TryGetValue(name, out var leash))
+             {
+                return leash;
+             }
+             return null; //safe null return
         }
 
+        /// <summary>
+        /// Retrieves a list of only the products that are in stock.
+        /// </summary>
+        /// <returns>A list of product names that are in stock.</returns>
         public List<string> GetOnlyInStockProducts()
         {
-            return _products.InStock().Select(x=>x.Name).ToList();
+            return _products.InStock().Select(x => x.Name).ToList();
         }
 
+        /// <summary>
+        /// Gets the total price of all in-stock inventory.
+        /// </summary>
+        /// <returns>The total price of in-stock inventory.</returns>
         public decimal GetTotalPriceOfInventory()
         {
             return _products.InStock().Select(x => x.Price).Sum();

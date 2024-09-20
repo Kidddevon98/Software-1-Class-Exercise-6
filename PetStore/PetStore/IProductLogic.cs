@@ -1,21 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PetStore
 {
-    internal interface IProductLogic
+    /// <summary>
+    /// Provides an interface for product-related operations in the PetStore.
+    /// </summary>
+    public interface IProductLogic
     {
-        public void AddProduct(Product product);
+        /// <summary>
+        /// Adds a product to the store inventory.
+        /// </summary>
+        /// <param name="product">The product to add.</param>
+        void AddProduct(Product product);
 
-        public List<Product> GetAllProducts();
+        /// <summary>
+        /// Retrieves all products available in the store.
+        /// </summary>
+        /// <returns>A list of all products.</returns>
+        List<Product> GetAllProducts();
 
-        public DogLeash GetDogLeashByName(string name);
+        /// <summary>
+        /// Retrieves a dog leash by its name.
+        /// </summary>
+        /// <param name="name">The name of the dog leash.</param>
+        /// <returns>The DogLeash object matching the specified name.</returns>
+        DogLeash? GetDogLeashByName(string name);
 
-        public List<string> GetOnlyInStockProducts();
+        /// <summary>
+        /// Retrieves a list of only products that are in stock.
+        /// </summary>
+        /// <returns>A list of in-stock product names.</returns>
+        List<string> GetOnlyInStockProducts();
 
-        public decimal GetTotalPriceOfInventory();
+        /// <summary>
+        /// Gets the total price of the inventory for all in-stock products.
+        /// </summary>
+        /// <returns>The total price of the in-stock inventory.</returns>
+        decimal GetTotalPriceOfInventory();
     }
 }
